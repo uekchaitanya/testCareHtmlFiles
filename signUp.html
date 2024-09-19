@@ -6,7 +6,7 @@
     <title>Sign Up</title>
     <style>
         body {
-            background-color: red; /* Your desired background color */
+            background-color: blue; /* Your desired background color */
             color: black; /* Text color */
         }
 
@@ -38,7 +38,7 @@
             if (myTestAKey_1Value) {
                 // Delay to ensure Azure UI elements are loaded
                 setTimeout(function() {
-                    const inputField = document.querySelector('input[name="extension_myTestAKey_1"]');
+                    const inputField = document.querySelector('extension_myTestAKey_1');
                     if (inputField) {
                         inputField.value = myTestAKey_1Value; // Set the value of the existing input field
                         inputField.readOnly = true; // Optionally, set it to read-only
