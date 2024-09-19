@@ -5,27 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <style>
-        /* Change the background color to yellow */
+        /* Change the background color to dark gray */
         body {
             background-color: #333; /* Dark gray */
             color: white; /* Change text color to white for better visibility */
-    
         }
         form {
             margin: auto;
             max-width: 400px; /* Center form and limit width */
             padding: 20px;
-            background: rgba(255, 255, 255, 0.9); /* Optional: slightly transparent background for the form */
-            border-radius: 10px; /* Optional: rounded corners */
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent background for the form */
+            border-radius: 10px; /* Rounded corners */
         }
     </style>
-   
 </head>
-
 <body>
-    <div id = "api"></div>
+    <form>
+        <input type="text" id="myTestAkey_1" name="myTestAKey_1" placeholder="Custom Attribute Value" />
+        <button type="submit">Sign Up</button>
+    </form>
 
- <script>
+    <script>
         window.onload = function() {
             // Function to get URL parameters
             function getQueryParam(param) {
@@ -41,5 +41,4 @@
         };
     </script>
 </body>
-    
 </html>
