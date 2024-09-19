@@ -1,8 +1,6 @@
+console.log('Test JS Line 1');
 
-
-console.log('Test JS Line 3');
-
-document.addEventListener('DOMContentLoaded', function() {
+window.onload = function() {
     // Function to get URL parameters
     function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
@@ -16,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (myTestAKey_1Value) {
         // Delay to ensure Azure UI elements are loaded
         setTimeout(function() {
-            const inputField = document.getElementById('extension_myTestAKey_1'); // Changed to use ID
+            const inputField = document.getElementById('extension_myTestAKey_1');
             if (inputField) {
                 inputField.value = myTestAKey_1Value; // Set the value of the existing input field
                 inputField.readOnly = true; // Optionally, set it to read-only
@@ -26,9 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 2000); // Adjust delay if necessary
     }
-});
+};
 
-
-console.log('Test JS Line 31 ');
-
-
+console.log('Test JS Line 29 ');
