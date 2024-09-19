@@ -1,34 +1,28 @@
-console.log('Test JS Line 1 ');
+
+console.log('Test JS Line 2');
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Log all input fields on the page
-    const inputFields = document.querySelectorAll('input, select, textarea');
-    inputFields.forEach((field) => {
-        console.log('Field Name: ' + field.name + ', Field Value: ' + field.value);
-    });
-});
-
-console.log('Test JS Line 11 ');
-
-document.addEventListener('DOMContentLoaded', function() {
+    // Function to get URL parameters
     function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
         const value = urlParams.get(param);
-        console.log('Param in func is ' + value);
+        console.log('Param in func is: ' + value); // Log the parameter value
         return value;
     }
 
+    // Prepopulate the field with the custom attribute value
     const myTestAKey_1Value = getQueryParam('extension_myTestAKey_1');
-    if (myTestAKey_1Value) {
-        setTimeout(function() {
-            const inputField = document.querySelector('input[name="extension_myTestAKey_1"]');
-            if (inputField) {
-                inputField.value = myTestAKey_1Value;
-                inputField.readOnly = true; // Optionally, make it read-only
-                console.log('Field populated with: ' + myTestAKey_1Value);
-            } else {
-                console.log('Input field not found');
-            }
-        }, 2000);
+    const inputField = document.getElementById('extension_myTestAKey_1');
+    
+    if (inputField) {
+        // If you want to set the value and keep it disabled
+        inputField.value = myTestAKey_1Value || ''; // Use the value or an empty string if no value found
+        console.log('Field populated with: ' + myTestAKey_1Value);
+    } else {
+        console.error('Input field not found');
     }
 });
+
+console.log('Test JS Line 26 ');
+
+
