@@ -3,37 +3,42 @@
 <head>
     <title>Sign Up</title>
     <style>
-        /* Your custom styles here */
+        /* Change the background color to red */
+        body {
+            background-color: red; /* Set background color to red */
+            color: white; /* Optional: change text color for better visibility */
+        }
+        /* Add any additional styles as needed */
+        form {
+            margin: auto;
+            max-width: 400px; /* Center form and limit width */
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8); /* Optional: slightly transparent background for the form */
+            border-radius: 10px; /* Optional: rounded corners */
+        }
     </style>
+    <script>
+        window.onload = function() {
+            // Function to get URL parameters
+            function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+
+            // Prepopulate the field with the custom attribute value
+            const myTestAKey_1Value = getQueryParam('myTestAKey_1');
+            if (myTestAKey_1Value) {
+                document.getElementById('myCustomField').value = myTestAKey_1Value;
+            }
+        };
+    </script>
 </head>
 <body>
     <form>
-        <!-- Existing fields -->
-        <input type="text" name="email" placeholder="Email" />
-        <!-- Custom field -->
-        <input type="text" name="myTestAKey_1" placeholder="Custom Attribute" />
+        <!-- Other sign-up fields -->
+        <input type="text" id="myCustomField" placeholder="Custom Attribute Value" />
         <!-- Submit button -->
         <button type="submit">Sign Up</button>
     </form>
-
-    <!-- Custom JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            function getQueryParams() {
-                const params = new URLSearchParams(window.location.search);
-                return {
-                    myTestAKey_1: params.get('myTestAKey_1')
-                };
-            }
-
-            const queryParams = getQueryParams();
-            if (queryParams.myTestAKey_1) {
-                const customField = document.querySelector('[name="myTestAKey_1"]');
-                if (customField) {
-                    customField.value = queryParams.myTestAKey_1;
-                }
-            }
-        });
-    </script>
 </body>
 </html>
