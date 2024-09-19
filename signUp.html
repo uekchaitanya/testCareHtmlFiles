@@ -20,10 +20,7 @@
     </style>
 </head>
 <body>
-    <form>
-        <input type="text" id="myTestAkey_1" name="myTestAKey_1" placeholder="Custom Attribute Value" />
-        <button type="submit">Sign Up</button>
-    </form>
+    <div>"api"</div>
 
     <script>
         window.onload = function() {
@@ -36,9 +33,11 @@
             // Prepopulate the field with the custom attribute value
             const myTestAKey_1Value = getQueryParam('myTestAKey_1');
             if (myTestAKey_1Value) {
-                document.getElementById('myTestAkey_1').value = myTestAKey_1Value;
+                document.getElementById('extension_myTestAKey_1').value = myTestAKey_1Value;
             }
         };
+
+        console.log('extension_myTestAKey_1', myTestAKey_1Value);
     </script>
 </body>
 </html>
