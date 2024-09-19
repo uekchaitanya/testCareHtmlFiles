@@ -5,17 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <style>
-        /* Change the background color to dark gray */
         body {
-            background-color: light green; /* Change this to dark gray if needed */
-            color: white; /* Change text color to white for better visibility */
-        }
-        form {
-            margin: auto;
-            max-width: 400px; /* Center form and limit width */
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9); /* Slightly transparent background for the form */
-            border-radius: 10px; /* Rounded corners */
+            background-color: yellow; /* Change to your desired color */
+            color: white;
         }
     </style>
 </head>
@@ -30,22 +22,18 @@
                 return urlParams.get(param);
             }
 
-            // Prepopulate the field with the custom attribute value
+            // Prepopulate the custom attribute value
             const myTestAKey_1Value = getQueryParam('myTestAKey_1');
             if (myTestAKey_1Value) {
-                const inputField = document.createElement('input');
-                inputField.type = 'text';
-                inputField.id = 'extension_myTestAKey_1';
-                inputField.name = 'myTestAKey_1';
-                inputField.placeholder = 'Custom Attribute Value';
-                inputField.value = myTestAKey_1Value;
-
-                // Append the input field to the form
-                document.getElementById('api').appendChild(inputField);
+                // Wait for the Azure B2C UI to load and then set the value
+                setTimeout(function() {
+                    const inputField = document.querySelector('input[name="extension_myTestAKey_1"]');
+                    if (inputField) {
+                        inputField.value = myTestAKey_1Value; // Set the value of the existing input field
+                        inputField.readOnly = true; // Optionally, set it to read-only
+                    }
+                }, 1000); // Delay to allow Azure UI to load
             }
-
-            // Log the custom attribute value for debugging
-            console.log('Custom Attribute Value:', myTestAKey_1Value);
         };
     </script>
 </body>
