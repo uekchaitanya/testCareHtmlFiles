@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <style>
+        /* Your custom styles here */
+    </style>
+</head>
+<body>
+    <form>
+        <!-- Existing fields -->
+        <input type="text" name="email" placeholder="Email" />
+        <!-- Custom field -->
+        <input type="text" name="myTestAKey_1" placeholder="Custom Attribute" />
+        <!-- Submit button -->
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function getQueryParams() {
+                const params = new URLSearchParams(window.location.search);
+                return {
+                    myTestAKey_1: params.get('myTestAKey_1')
+                };
+            }
+
+            const queryParams = getQueryParams();
+            if (queryParams.myTestAKey_1) {
+                const customField = document.querySelector('[name="myTestAKey_1"]');
+                if (customField) {
+                    customField.value = queryParams.myTestAKey_1;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
