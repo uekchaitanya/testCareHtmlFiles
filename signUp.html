@@ -6,7 +6,7 @@
     <title>Sign Up</title>
     <style>
         body {
-            background-color: yellow; /* Change to your desired color */
+            background-color: blue; /* Change to your desired color */
             color: white;
         }
     </style>
@@ -27,7 +27,7 @@
             if (myTestAKey_1Value) {
                 // Wait for the Azure B2C UI to load and then set the value
                 setTimeout(function() {
-                    const inputField = document.querySelector('input[name="extension_myTestAKey_1"]');
+                    const inputField = document.querySelector('input[name="myTestAKey_1"]');
                     if (inputField) {
                         inputField.value = myTestAKey_1Value; // Set the value of the existing input field
                         inputField.readOnly = true; // Optionally, set it to read-only
