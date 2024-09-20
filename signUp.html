@@ -27,18 +27,18 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Function to get URL parameters
             function getQueryParam(param) {
-                const urlParams = new URLSearchParams(window.location.search);
-                const value = urlParams.get(param);
+                let urlParams = new URLSearchParams(window.location.search);
+                let value = urlParams.get(param);
                 console.log('Param in func is ' + value); // Log the parameter value
                 return value;
             }
 
             // Prepopulate the custom attribute value
-            const myTestAKey_1Value = getQueryParam('extension_myTestAKey_1');
+            let myTestAKey_1Value = getQueryParam('extension_myTestAKey_1');
             if (myTestAKey_1Value) {
                 // Delay to ensure Azure UI elements are loaded
                 setTimeout(function() {
-                    const inputField = document.querySelector('extension_myTestAKey_1');
+                    let inputField = document.querySelector('extension_myTestAKey_1');
                     if (inputField) {
                         inputField.disabled = false; // Temporarily enable the field
                         inputField.value = myTestAKey_1Value; // Set the value of the existing input field
@@ -50,6 +50,7 @@
                 }, 2000); // Increase delay if necessary
             }
         });
+        console.log('inputFiel');
 
         myTestAKey_1Value = sessionStorage.getItem('myTestAKey_1');
     if (myTestAKey_1Value) {
