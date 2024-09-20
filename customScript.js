@@ -35,8 +35,9 @@ window.onload = () => {
         setTimeout(function() {
             inputField = document.getElementById('extension_myTestAKey_1');
             if (inputField) {
-                inputField.value = myTestAKey_1Value; // Set the value of the existing input field
-                inputField.readOnly = true; // Optionally, set it to read-only
+                inputField.disabled = false; // Temporarily enable the field
+            inputField.value = myTestAKey_1Value; // Set the value
+            inputField.disabled = true; // Disable it again
                 console.log('Field populated with: ' + myTestAKey_1Value);
             } else {
                 console.error('Input field not found'); // Log if the field isn't found
