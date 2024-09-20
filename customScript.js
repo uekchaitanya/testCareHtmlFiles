@@ -47,6 +47,24 @@ window.onload = () => {
 
     console.log('line break 4');
 
+    myTestAKey_1Value = getQueryParam('extension_myTestAKey_1');
+    if (myTestAKey_1Value) {
+        // Delay to ensure Azure UI elements are loaded
+        setTimeout(function() {
+            inputField = document.getElementById('extension_myTestAKey_1');
+            Console.log('input field is ra ' + inputField)
+            if (inputField) {
+                inputField.disabled = false; // Temporarily enable the field
+            inputField.value = myTestAKey_1Value; // Set the value
+            inputField.disabled = true; // Disable it again
+                console.log('Field populated with: ' + myTestAKey_1Value);
+            } else {
+                console.error('Input field not found'); // Log if the field isn't found
+            }
+        }, 10000); // Adjust delay if necessary
+    }
+
+
     
 };
 
