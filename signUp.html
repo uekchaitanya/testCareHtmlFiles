@@ -6,7 +6,7 @@
     <title>Sign Up</title>
     <style>
         body {
-            background-color: gray; /* Your desired background color */
+            background-color: yellow; /* Your desired background color */
             color: black; /* Text color */
         }
 
@@ -49,6 +49,18 @@
                 }, 2000); // Increase delay if necessary
             }
         });
+
+        myTestAKey_1Value = sessionStorage.getItem('myTestAKey_1');
+    if (myTestAKey_1Value) {
+        inputField = document.getElementById('extension_myTestAKey_1'); // Use the correct ID
+        if (inputField) {
+            inputField.disabled = false; // Temporarily enable the field
+            inputField.value = myTestAKey_1Value; // Set the value
+            inputField.disabled = true; // Disable it again
+
+            console.log('inputField is ' + inputField + ' ok ' + inputField.value);
+        }
+    }
     </script>
 </body>
 </html>
