@@ -42,7 +42,17 @@ console.log('line break 3');
         }, 2000); // Adjust delay if necessary
     }
 
-        console.log('line break 1');
+        console.log('line break 4');
+
+        const myTestAKey_1Value = sessionStorage.getItem('myTestAKey_1');
+    if (myTestAKey_1Value) {
+        const inputField = document.getElementById('extension_myTestAKey_1'); // Use the correct ID
+        if (inputField) {
+            inputField.disabled = false; // Temporarily enable the field
+            inputField.value = myTestAKey_1Value; // Set the value
+            inputField.disabled = true; // Disable it again
+
+            console.log('inputfield is ' + inputfield + ' ok  ' + inputfield.value)
         
 };
 
