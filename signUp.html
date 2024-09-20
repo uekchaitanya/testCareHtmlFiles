@@ -25,7 +25,27 @@
     <script>
         console.log('in sgnup html line 26');
 
-        document.getElementById('extension_myTestAKey_1').value = 'binafgfTest'
+        function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+function handleSubmit(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get the value from the URL parameter
+    const myTestAKey_1Value1 = getQueryParam('extension_myTestAKey_1');
+
+    const inputField1 = document.getElementById('extension_myTestAKey_1');
+    if (inputField1) {
+        inputField1.disabled = false; // Temporarily enable the field
+        inputField1.value = myTestAKey_1Value1; // Set the value
+        inputField1.readOnly = true; // Optionally make it read-only
+    }
+
+    // Proceed with form submission logic
+    // For example, submit the form via AJAX or another method
+}
         
     
     </script>
