@@ -21,6 +21,9 @@ window.onload = () => {
         let urlParams = new URLSearchParams(window.location.search);
         let value = urlParams.get(param);
         console.log('Param in func is: ' + value); // Log the parameter value
+        if(value ==null){
+            return 'TestCheckstr';
+        }
         return value; // Ensure the value is returned
     }
 
