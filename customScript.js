@@ -10,7 +10,7 @@ window.onload = () => {
 
     console.log('line break 1');
 
-    const myTestAKey_1Value = sessionStorage.getItem('myTestAKey_1');
+     myTestAKey_1Value = sessionStorage.getItem('myTestAKey_1');
     if (myTestAKey_1Value) {
         const inputField = document.getElementById('myTestAKey_1'); // Use the correct ID
         if (inputField) {
@@ -27,11 +27,11 @@ window.onload = () => {
 
 console.log('line break 3');
         // Prepopulate the custom attribute value
-    const myTestAKey_1Value = getQueryParam('extension_myTestAKey_1');
+     myTestAKey_1Value = getQueryParam('extension_myTestAKey_1');
     if (myTestAKey_1Value) {
         // Delay to ensure Azure UI elements are loaded
         setTimeout(function() {
-            const inputField = document.getElementById('extension_myTestAKey_1');
+             inputField = document.getElementById('extension_myTestAKey_1');
             if (inputField) {
                 inputField.value = myTestAKey_1Value; // Set the value of the existing input field
                 inputField.readOnly = true; // Optionally, set it to read-only
@@ -44,9 +44,9 @@ console.log('line break 3');
 
         console.log('line break 4');
 
-        const myTestAKey_1Value = sessionStorage.getItem('myTestAKey_1');
+         myTestAKey_1Value = sessionStorage.getItem('myTestAKey_1');
     if (myTestAKey_1Value) {
-        const inputField = document.getElementById('extension_myTestAKey_1'); // Use the correct ID
+         inputField = document.getElementById('extension_myTestAKey_1'); // Use the correct ID
         if (inputField) {
             inputField.disabled = false; // Temporarily enable the field
             inputField.value = myTestAKey_1Value; // Set the value
