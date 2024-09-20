@@ -40,6 +40,7 @@
                 setTimeout(function() {
                     const inputField = document.querySelector('extension_myTestAKey_1');
                     if (inputField) {
+                        inputField.disabled = false; // Temporarily enable the field
                         inputField.value = myTestAKey_1Value; // Set the value of the existing input field
                         inputField.readOnly = true; // Optionally, set it to read-only
                         console.log('Field populated with: ' + myTestAKey_1Value);
