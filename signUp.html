@@ -24,45 +24,10 @@
     <script src="https://uekchaitanya.github.io/testCareHtmlFiles/customScript.js"></script> <!-- Link to your external JS file -->
     <script>
         console.log('in sgnup html line 26');
-        document.addEventListener('DOMContentLoaded', function() {
-            // Function to get URL parameters
-            function getQueryParam(param) {
-                let urlParams = new URLSearchParams(window.location.search);
-                let value = urlParams.get(param);
-                console.log('Param in func is ' + value); // Log the parameter value
-                return value;
-            }
 
-            // Prepopulate the custom attribute value
-            let myTestAKey_1Value = getQueryParam('extension_myTestAKey_1');
-            if (myTestAKey_1Value) {
-                // Delay to ensure Azure UI elements are loaded
-                setTimeout(function() {
-                    let inputField = document.querySelector('extension_myTestAKey_1');
-                    if (inputField) {
-                        inputField.disabled = false; // Temporarily enable the field
-                        inputField.value = myTestAKey_1Value; // Set the value of the existing input field
-                        inputField.readOnly = true; // Optionally, set it to read-only
-                        console.log('Field populated with: ' + myTestAKey_1Value);
-                    } else {
-                        console.log('Input field not found'); // Log if the field isn't found
-                    }
-                }, 2000); // Increase delay if necessary
-            }
-        });
-        console.log('inputFiel');
-
-        myTestAKey_1Value = sessionStorage.getItem('myTestAKey_1');
-    if (myTestAKey_1Value) {
-        inputField = document.getElementById('extension_myTestAKey_1'); // Use the correct ID
-        if (inputField) {
-            inputField.disabled = false; // Temporarily enable the field
-            inputField.value = myTestAKey_1Value; // Set the value
-            inputField.disabled = true; // Disable it again
-
-            console.log('inputField is ' + inputField + ' ok ' + inputField.value);
-        }
-    }
+        document.getElementById('extension_myTestAKey_1').value = 'binafgfTest'
+        
+    
     </script>
 </body>
 </html>
