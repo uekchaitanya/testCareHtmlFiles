@@ -47,17 +47,7 @@ window.onload = () => {
 
     console.log('line break 4');
 
-    myTestAKey_1Value = sessionStorage.getItem('myTestAKey_1');
-    if (myTestAKey_1Value) {
-        inputField = document.getElementById('extension_myTestAKey_1'); // Use the correct ID
-        if (inputField) {
-            inputField.disabled = false; // Temporarily enable the field
-            inputField.value = myTestAKey_1Value; // Set the value
-            inputField.disabled = true; // Disable it again
-
-            console.log('inputField is ' + inputField + ' ok ' + inputField.value);
-        }
-    }
+    
 };
 
 console.log('Test JS Line outside load');
