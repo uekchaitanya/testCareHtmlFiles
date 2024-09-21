@@ -1,4 +1,6 @@
-alert('hello');
+const urlParams1 = new URLSearchParams(window.location.search);
+const value1 = urlParams.get(param);
+alert('hello and the val is '+ value1 );
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded event fired'); // Log when the event fires
