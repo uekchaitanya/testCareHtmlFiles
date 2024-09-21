@@ -2,6 +2,19 @@ const urlParams1 = new URLSearchParams(window.location.search);
 const value1 = urlParams1.get('extension_myTestAKey_1');
 alert('hello and the val is '+ value1 );
 
+alert('before innter text ' +document.getElementById('extension_myTestAKey_1').innerText );
+
+alert('before value is ' +document.getElementById('extension_myTestAKey_1').value );
+
+document.getElementById('extension_myTestAKey_1').innerText = value1;
+
+
+
+console.log('The value is set ');
+alert('after innter text ' +document.getElementById('extension_myTestAKey_1').innerText );
+
+alert('after  value is ' +document.getElementById('extension_myTestAKey_1').value );
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded event fired'); // Log when the event fires
 
