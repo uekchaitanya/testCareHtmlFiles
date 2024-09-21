@@ -1,34 +1,47 @@
-window.onload = () => {
-    // Function to get a specific query parameter by name
-    console.log('window on load called');
-    function getQueryParam(param) {
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded event fired'); // Log when the event fires
+
+    // Function to get query parameters
+    const getQueryParam = (param) => {
         const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
+        const value = urlParams.get(param);
+        console.log(`Query Parameter Value for ${param}:`, value); // Log the parameter value
+        return value;
+    };
+
+    // Get the value for myTestAKey_1
+    const myTestAKey_1Value = getQueryParam('extension_myTestAKey_1');
+    
+    if (myTestAKey_1Value) {
+        console.log('myTestAKey_1Value found:', myTestAKey_1Value); // Log if value is found
+    } else {
+        console.log('myTestAKey_1Value not found in URL'); // Log if value is not found
     }
 
-    // Get the value of 'extension_myTestAKey_1' from the URL
-    const myTestAKey_1Value = getQueryParam('extension_myTestAKey_1');
-    console.log('Query Parameter Value:', myTestAKey_1Value); // Log for debugging
-
-    if (myTestAKey_1Value) {
+    // MutationObserver to watch for changes in the DOM
+    const observer = new MutationObserver(() => {
         const inputField = document.getElementById('extension_myTestAKey_1');
 
         if (inputField) {
-            // Temporarily enable the field to set the value
-            inputField.disabled = false;
+            console.log('Input field found in DOM'); // Log when the input field is found
 
-            // Set the value from the query parameter
-            inputField.value = myTestAKey_1Value;
+            if (myTestAKey_1Value) {
+                inputField.disabled = false; // Temporarily enable the field
+                inputField.value = myTestAKey_1Value; // Set the value
+                inputField.readOnly = true; // Set to read-only
+                console.log('Field populated with:', myTestAKey_1Value); // Log successful population
+            } else {
+                console.error('myTestAKey_1Value was not found, cannot populate field'); // Log if value is missing
+            }
 
-            // Make it read-only after setting
-            inputField.readOnly = true; 
-            console.log('Field populated with:', myTestAKey_1Value); // Log to confirm the value is set
+            observer.disconnect(); // Stop observing after finding and populating the field
         } else {
-            console.error('Input field not found');
+            console.log('Input field not found yet, waiting for changes...'); // Log if the field isn't found
         }
-    } else {
-        console.log('Query parameter not found');
-    }
+    });
 
-    console.log('window on load done');
-};
+    // Start observing for changes in the body
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    console.log('MutationObserver is set up'); // Log when the observer is set up
+});
