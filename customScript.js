@@ -1,5 +1,5 @@
 const urlParams1 = new URLSearchParams(window.location.search);
-const value1 = urlParams.get(param);
+const value1 = urlParams1.get(param);
 alert('hello and the val is '+ value1 );
 
 document.addEventListener('DOMContentLoaded', () => {
