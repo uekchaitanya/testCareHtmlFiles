@@ -1,6 +1,6 @@
 window.onload = () => {
     // Function to get a specific query parameter by name
-    Console.log('window on load called);
+    console.log('window on load called);
     function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(param);
