@@ -1,3 +1,5 @@
+alert('hello');
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded event fired'); // Log when the event fires
 
