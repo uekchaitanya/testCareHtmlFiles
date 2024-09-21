@@ -1,5 +1,5 @@
 const urlParams1 = new URLSearchParams(window.location.search);
-const value1 = urlParams1.get('extension_myTestAKey_1');
+let value1 = urlParams1.get('extension_myTestAKey_1');
 alert('hello and the val is '+ value1 );
 
 alert('before innter text ' +document.getElementById('extension_myTestAKey_1').innerText );
@@ -11,6 +11,17 @@ document.getElementById('extension_myTestAKey_1').innerText = value1;
 
 
 console.log('The value is set ');
+
+window.onload = () => {
+
+    alert('val 1 is ' + value1);
+
+    document.getElementById('extension_myTestAKey_1').innerText = value1;
+    
+    alert('its set');
+
+};
+
 alert('after innter text ' +document.getElementById('extension_myTestAKey_1').innerText );
 
 alert('after  value is ' +document.getElementById('extension_myTestAKey_1').value );
