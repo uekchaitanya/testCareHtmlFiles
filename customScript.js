@@ -9,6 +9,9 @@ alert('before value is ' +document.getElementById('extension_myTestAKey_1').valu
 document.getElementById('extension_myTestAKey_1').innerText = value1;
 
 
+document.getElementById('email').innerText = value1;
+
+
 
 console.log('The value is set ');
 
@@ -25,6 +28,11 @@ window.onload = () => {
 alert('after innter text ' +document.getElementById('extension_myTestAKey_1').innerText );
 
 alert('after  value is ' +document.getElementById('extension_myTestAKey_1').value );
+
+alert('after email innter text ' +document.getElementById('email').innerText );
+
+alert('after  email value is ' +document.getElementById('email').value );
+
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded event fired'); // Log when the event fires
