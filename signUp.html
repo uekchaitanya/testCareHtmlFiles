@@ -21,32 +21,45 @@
     <div id="api"></div> <!-- Required for Azure B2C UI -->
     </div>
 
-    <script src="https://uekchaitanya.github.io/testCareHtmlFiles/customScript.js"></script> <!-- Link to your external JS file -->
+    
     <script>
-        console.log('in sgnup html line 26');
+      <script>
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded event fired');
+    const getQueryParam = (param) => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const value = urlParams.get(param);
+        console.log(`Query Parameter Value for ${param}:`, value);
+        return value;
+    };
 
-        function getQueryParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-}
-
-function handleSubmit(event) {
-    event.preventDefault(); // Prevent default form submission
-
-    // Get the value from the URL parameter
-    const myTestAKey_1Value1 = getQueryParam('extension_myTestAKey_1');
-
-    const inputField1 = document.getElementById('extension_myTestAKey_1');
-    if (inputField1) {
-        inputField1.disabled = false; // Temporarily enable the field
-        inputField1.value = myTestAKey_1Value1; // Set the value
-        inputField1.readOnly = true; // Optionally make it read-only
+    const myTestAKey_1Value = getQueryParam('extension_myTestAKey_1');
+    if (myTestAKey_1Value) {
+        console.log('myTestAKey_1Value found:', myTestAKey_1Value);
+    } else {
+        console.log('myTestAKey_1Value not found in URL');
     }
 
-    // Proceed with form submission logic
-    // For example, submit the form via AJAX or another method
-}
-        
+    const observer = new MutationObserver(() => {
+        const inputField = document.getElementById('extension_myTestAKey_1');
+        if (inputField) {
+            console.log('Input field found in DOM');
+            if (myTestAKey_1Value) {
+                inputField.disabled = false;
+                inputField.value = myTestAKey_1Value;
+                inputField.readOnly = true;
+                console.log('Field populated with:', myTestAKey_1Value);
+            }
+            observer.disconnect();
+        } else {
+            console.log('Input field not found yet, waiting for changes...');
+        }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+    console.log('MutationObserver is set up');
+});
+</script>   
     
     </script>
 </body>
