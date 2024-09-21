@@ -21,43 +21,7 @@
     <div id="api"></div> <!-- Required for Azure B2C UI -->
     </div>
 
+    <script src="https://uekchaitanya.github.io/testCareHtmlFiles/customScript.js"></script> <!-- Link to your external JS file -->
     
-      <script>
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOMContentLoaded event fired');
-    const getQueryParam = (param) => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const value = urlParams.get(param);
-        console.log(`Query Parameter Value for ${param}:`, value);
-        return value;
-    };
-
-    const myTestAKey_1Value = getQueryParam('extension_myTestAKey_1');
-    if (myTestAKey_1Value) {
-        console.log('myTestAKey_1Value found:', myTestAKey_1Value);
-    } else {
-        console.log('myTestAKey_1Value not found in URL');
-    }
-
-    const observer = new MutationObserver(() => {
-        const inputField = document.getElementById('extension_myTestAKey_1');
-        if (inputField) {
-            console.log('Input field found in DOM');
-            if (myTestAKey_1Value) {
-                inputField.disabled = false;
-                inputField.value = myTestAKey_1Value;
-                inputField.readOnly = true;
-                console.log('Field populated with:', myTestAKey_1Value);
-            }
-            observer.disconnect();
-        } else {
-            console.log('Input field not found yet, waiting for changes...');
-        }
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-    console.log('MutationObserver is set up');
-});
-</script>   
 </body>
 </html>
